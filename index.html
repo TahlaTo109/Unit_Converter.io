@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css" />
+    <script type="module" src="data.js"></script>
+  </head>
+  <body>
+    <!--##########################################################-->
+    <!--INPUTS-->
+    <fieldset class="container">
+      <label for="value">Input:</label>
+      <input type="number" value="input1" id="value" class="query" />
+      <!--##########################################################-->
+      <!--FORM OF MEASUREMENT-->
+      <select name="measurement" class="selection" id="dropdownOne"></select>
+      <!--##########################################################-->
+      <!--INITIAL UNIT-->
+      <select name="firstUnit" class="selection" id="dropdownTwo"></select>
+      <!--##########################################################-->
+      <span>to</span>
+      <!--UNIT TO CONVERT TO-->
+      <select name="secondUnit" class="selection" id="dropdownThree"></select>
+    </fieldset>
+    <!--##########################################################-->
+    <!--RESULT-->
+    <fieldset class="container">
+      <button class="subBtn" id="submit">Convert</button>
+      <span>Result:</span>
+    </fieldset>
+    <fieldset class="container result">
+      <span id="result"></span>
+    </fieldset>
+    
+  </body>
+</html>

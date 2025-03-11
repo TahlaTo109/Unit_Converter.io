@@ -1,0 +1,81 @@
+/**CORE STYLES*/
+html {
+    height: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: linear-gradient(45deg,#060713, #1d224b, #7b50e0, #8189f5);
+}
+/**###################################################################*/
+.container {
+    background-color: #9e8ae9;
+    width: 50%;
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size:x-large;
+    font-weight: bold;
+    align-items: center;
+    padding: 0.75rem;
+    border-radius: 16px;
+}
+
+.result {
+    width: 30%;
+}
+
+input, select {
+    height: 50px;
+    border-radius: 12px;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 0 5px;
+    border: 4px solid black;
+    text-align: center;
+    margin: 0.5rem 0;
+}
+
+.query {
+    font-size: 25px;
+}
+
+.query:focus, select:focus {
+    background-color: #b6a2e6;
+    box-shadow: 0 0 5px 8px white;
+    font-size: 25px;
+}
+
+#dropdownOne {
+    background-color: rgb(159, 118, 226);
+    width: 75%;
+}
+
+.selection {
+    width: 50%;
+}
+
+.subBtn {
+    width: auto;
+    height: 50px;
+    font-size: 25px;
+    font-weight: bold;
+    border: 4px solid black;
+    border-radius: 12px;
+    padding: 0 5%;
+}
+
+#result {
+    font-size: 30px;
+    font-weight: bolder;
+    margin: 15px 0;
+}
+
+.divider {
+    border-bottom: 2px solid black;
+}
