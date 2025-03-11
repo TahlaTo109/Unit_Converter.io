@@ -188,5 +188,5 @@ export function convert() {
 
   document.getElementById(
     "result"
-  ).innerHTML = `${value} ${fromUnit} to ${formatter.format(result)} ${toUnit}`;
+  ).innerHTML = `${formatter.format(value)} ${fromUnit} to ${formatter.format(result)} ${toUnit}`;
 }
