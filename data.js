@@ -1,6 +1,5 @@
 import { convert } from "./data/conversions.js";
 
-const input = document.getElementById("value");
 const dropOne = document.getElementById("dropdownOne");
 const dropTwo = document.getElementById("dropdownTwo");
 const dropThree = document.getElementById("dropdownThree");
@@ -12,17 +11,33 @@ const unitOption = [
   "Mass",
   "Temperature",
   "Time",
+  "Digital Storage",
 ];
-const massOption = ["Grams", "Kilograms", "Pounds", "Ounces"];
-const tempOption = [`Celsius`, `Fahrenheit`, `Kelvin`];
+const userStart = ["Select the starting unit"];
+const userEnd = ["Select the unit to convert"];
+const massOption = [
+  "Metric_Ton",
+  "Kilograms",
+  "Grams",
+  "Milligrams",
+  "Micrograms",
+  "Imperial_Ton",
+  "Pounds",
+  "Ounces",
+];
+const tempOption = ["Celsius", "Fahrenheit", "Kelvin"];
 const lengthOption = [
+  "Kilometers",
   "Meters",
   "Centimeters",
   "Millimeters",
-  "Kilometers",
-  "Inches",
-  "Feet",
+  "Microns",
+  "Nanometers",
+  "Miles",
   "Yards",
+  "Feet",
+  "Inches",
+  "Nautical_Miles",
 ];
 const timeOption = [
   "Seconds",
@@ -33,21 +48,59 @@ const timeOption = [
   "Months",
   "Years",
 ];
+const digStorageOption = [
+  "Byte",
+  "Kilobyte",
+  "Megabyte",
+  "Gigabyte",
+  "Terabyte",
+];
 
-unitOption.forEach((optionText) => {
-  const option = document.createElement("option");
-  option.text = optionText;
-  option.value = optionText;
-  dropOne.add(option);
+addEventListener("load", function () {
+  unitOption.forEach((optionText) => {
+    const option = document.createElement("option");
+    option.text = optionText;
+    option.value = optionText;
+    dropOne.add(option);
+  });
+  userStart.forEach((optionText) => {
+    const option = document.createElement("option");
+    option.text = optionText;
+    option.value = optionText;
+    dropTwo.add(option);
+  });
+  userEnd.forEach((optionText) => {
+    const option = document.createElement("option");
+    option.text = optionText;
+    option.value = optionText;
+    dropThree.add(option);
+  });
 });
+
 dropOne.addEventListener("change", function () {
   const dropOneValue = document.getElementById("dropdownOne").value;
+
   while (dropdownTwo.options.length > 0) {
     dropTwo.remove(0);
     dropThree.remove(0);
   }
 
-  if (dropOneValue === "Length") {
+  if (dropOneValue === "Select a form of Measurement") {
+    //Dropdown 2 changes to "Select the starting unit"
+    userStart.forEach((optionText) => {
+      const option = document.createElement("option");
+      option.text = optionText;
+      option.value = optionText;
+      dropTwo.add(option);
+    });
+    userEnd.forEach((optionText) => {
+      const option = document.createElement("option");
+      option.text = optionText;
+      option.value = optionText;
+      dropThree.add(option);
+    });
+    //Dropdown 2 changes to "Select the ending unit"
+  } else if (dropOneValue === "Length") {
     //Dropdown 2 changes to "Length"
     lengthOption.forEach((optionText) => {
       const option = document.createElement("option");
@@ -111,14 +164,29 @@ dropOne.addEventListener("change", function () {
       dropThree.add(option);
     });
     //#########################################
+  } else if (dropOneValue === "Digital Storage") {
+    //Dropdown 2 changes to "Digital Storage"
+    digStorageOption.forEach((optionText) => {
+      const option = document.createElement("option");
+      option.text = optionText;
+      option.value = optionText;
+      dropTwo.add(option);
+    });
+    //Dropdown 3 changes to "Digital Storage"
+    digStorageOption.forEach((optionText) => {
+      const option = document.createElement("option");
+      option.text = optionText;
+      option.value = optionText;
+      dropThree.add(option);
+    });
   } else {
     console.log("No Value Detected");
   }
 });
 
-  submitBtn.addEventListener('click', () => {
-    convert();
-  })
+submitBtn.addEventListener("click", () => {
+  convert();
+});
 
 //HALL OF CLOWN PUNS
 
